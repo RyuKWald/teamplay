@@ -1,0 +1,5 @@
+.expansion-note{padding:12px 15px;border:1px solid #8883;border-radius:16px;background:var(--field);font-size:14px;line-height:1.5}
+.category-tools{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}.category-tools button{flex:1;min-width:100px}
+.private-scroll{max-height:46dvh;overflow:auto;overscroll-behavior:contain;padding-right:8px}
+.session-log{max-height:220px;overflow:auto}.theme-intro{font-style:italic;line-height:1.6}
+fieldset{min-width:0}legend{max-width:100%;overflow-wrap:anywhere}

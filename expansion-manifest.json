@@ -1,0 +1,144 @@
+{
+  "version": "2.0",
+  "entry_count": 4030,
+  "counts": {
+    "croc": {
+      "sets": {
+        "music": 60,
+        "videogames": 60,
+        "internet": 60,
+        "food": 60,
+        "travel": 60,
+        "sport": 60,
+        "tech": 60,
+        "fairytales": 60,
+        "absurd": 60,
+        "places": 60,
+        "feelings": 60,
+        "duets": 60,
+        "movies": 60,
+        "people": 60,
+        "objects": 60,
+        "jobs": 60,
+        "adult": 40
+      },
+      "entries": 1000
+    },
+    "alias": {
+      "sets": {
+        "food": 60,
+        "transport": 60,
+        "digital": 60,
+        "science": 60,
+        "art": 60,
+        "unusual_objects": 60,
+        "wildlife": 60,
+        "geography": 60,
+        "social": 60,
+        "nostalgia": 60,
+        "easy": 60,
+        "medium": 60,
+        "hard": 60,
+        "adult": 40
+      },
+      "entries": 820
+    },
+    "who": {
+      "sets": {
+        "food": 60,
+        "transport": 60,
+        "wildlife": 60,
+        "fairytales": 60,
+        "places": 60,
+        "tech": 60,
+        "nostalgia": 60,
+        "science": 60,
+        "videogames": 50,
+        "creatures": 60,
+        "animation": 60,
+        "adult": 40
+      },
+      "entries": 690
+    },
+    "never": {
+      "sets": {
+        "digital": 60,
+        "travel": 60,
+        "work": 60,
+        "food": 60,
+        "childhood": 60,
+        "awkward": 60,
+        "adult": 30
+      },
+      "entries": 390
+    },
+    "truth": {
+      "sets": {
+        "meet": {
+          "truth": 50,
+          "dare": 50
+        },
+        "deep": {
+          "truth": 50,
+          "dare": 50
+        },
+        "creative": {
+          "truth": 50,
+          "dare": 50
+        },
+        "duo": {
+          "truth": 50,
+          "dare": 50
+        },
+        "light": {
+          "truth": 30,
+          "dare": 30
+        },
+        "party": {
+          "truth": 30,
+          "dare": 30
+        },
+        "adult": {
+          "truth": 30,
+          "dare": 30
+        }
+      },
+      "entries": 580
+    },
+    "spy": {
+      "sets": {
+        "journey": 20,
+        "unusual": 20,
+        "fantasy": 20,
+        "future": 20,
+        "city": 20,
+        "events": 20,
+        "nature": 20,
+        "time": 20
+      },
+      "entries": 160
+    },
+    "bunker": {
+      "sets": {
+        "profession": 30,
+        "health": 20,
+        "hobby": 30,
+        "phobia": 20,
+        "baggage": 30,
+        "trait": 20,
+        "action": 20,
+        "disaster": 20,
+        "area": 10,
+        "term": 10,
+        "supplies": 10,
+        "feature": 10,
+        "skill": 40,
+        "secret": 40,
+        "goal": 40,
+        "events": 40
+      },
+      "entries": 390
+    }
+  },
+  "note": "Считаются записи в наборах разных игр, а не глобально уникальные понятия. Во время подключения совпадения внутри набора удаляются."
+}
