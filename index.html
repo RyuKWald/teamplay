@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+  <meta content="#24283b" name="theme-color"/>
+  <meta content="Круг — восемь игр для компании на одном телефоне" name="description"/>
+  <title>
+   Круг — игры для компании
+  </title>
+  <link href="./css/styles.css" rel="stylesheet"/>
+  <script src="https://telegram.org/js/telegram-web-app.js">
+  </script>
+  <script src="./js/app.js" type="module">
+  </script>
+ </head>
+ <body>
+  <div aria-hidden="true" class="aurora">
+  </div>
+  <header>
+   <button aria-label="Назад" class="glass back" hidden="" id="back">
+    ‹ Назад
+   </button>
+   <h1 id="title">
+    Круг
+   </h1>
+   <button aria-label="Настройки" class="glass gear" id="settings">
+    ⚙
+   </button>
+  </header>
+  <main id="app" tabindex="-1">
+  </main>
+  <div aria-live="polite" hidden="" id="toast" role="status">
+  </div>
+  <div id="modal-root">
+  </div>
+  <noscript>
+   Для игры включите JavaScript.
+  </noscript>
+ </body>
+</html>
