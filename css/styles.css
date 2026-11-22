@@ -136,6 +136,14 @@ main {
 .tile small {
   display:block;
   font-size:13px}
+.tile .group-size {
+  display:inline-block;
+  margin-top:10px;
+  padding:3px 8px;
+  border:1px solid var(--muted);
+  border-radius:10px;
+  font-size:12px;
+  font-weight:600}
 .hero {
   padding:6px 4px 20px}
 .hero p {
@@ -473,5 +481,4 @@ to {
   text-shadow:none}
 .aurora {
   transition:background .7s ease}
-
 
