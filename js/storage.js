@@ -62,8 +62,9 @@ export const storage = {
     let used = new Set(Array.isArray(state.used[key]) ? state.used[key] : []);
     let available = pool.filter(x => !used.has(x));
     if (!available.length) {
+      const previous = [...used].at(-1);
       pool.forEach(x => used.delete(x));
-      available = pool;
+      available = pool.length > 1 ? pool.filter(x => x !== previous) : pool;
       window.dispatchEvent(new CustomEvent('krugnotice', {
         detail: 'Колода закончилась — начинаем новый перемешанный круг.'
       }));
