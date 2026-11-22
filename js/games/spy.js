@@ -28,7 +28,8 @@ export function mount(ctx) {
   const style = select('Вариант обсуждения', [['questions', 'Классика: вопросы друг другу'], ['guided', 'Вопросы с подсказками'], ['word', 'Ассоциации: по одному слову в круг']], s.style);
   let stop = () => {};
   ctx.onClean(() => stop());
-  ctx.show(panel(el('h2', {}, 'Шпион'), text('Выберите знакомый мир или смешайте несколько тем. Мирные получают одну локацию, шпионы не знают её. Шпионов должно быть меньше половины игроков.', 'help'), count.node, spies.node, minutes.node, style.node), cats.node, button('Раздать роли', () => {
+  ctx.setup('Все, кроме шпиона, знают место встречи. Задавайте друг другу косвенные вопросы и попробуйте вычислить, кто не в курсе.',
+    [['Участники',count.node,spies.node,()=>spies.value*2>=count.value && 'Шпионов должно быть меньше половины игроков'],['Обсуждение',minutes.node,style.node],['Локации',cats.node]], ctx.launch('Раздать роли', () => {
     if (spies.value * 2 >= count.value) {
       ctx.toast('Шпионов должно быть меньше половины игроков');
       return;

@@ -13,7 +13,8 @@ export function mount(ctx) {
   const count = number('Игроков', 4, 12, s.players),
     rich = toggle('Расширенные персонажи: навык, секрет, цель', s.extended),
     events = toggle('Неожиданные события во время партии', s.events);
-  ctx.show(panel(el('h2', {}, 'Бункер'), text('Секрет и цель — дополнительные аргументы для отыгрыша, а не обязанность вредить другим. Особые карты и события разрешаются группой; приложение не выполняет их эффекты автоматически.', 'help'), count.node, rich.node, events.node, button('Создать партию', () => {
+  ctx.setup('Мест в убежище хватит не всем. Получите персонажей, раскрывайте характеристики и решайте вместе, кто останется. Особые карты и события разыгрывает компания.',
+    [['Участники',count.node],['Правила партии',rich.node,events.node]],ctx.launch('Создать партию', () => {
     const n = count.value,
       fields = [...core, ...(rich.value ? extended : [])],
       seats = Math.floor(n / 2);
@@ -45,7 +46,7 @@ export function mount(ctx) {
         class: 'public-value'
       }, `${label}: ${c[k]}`)))
     })), () => board(cards, fields, seats, bunker, events.value));
-  })));
+  }));
   function board(cards, fields, seats, bunker, withEvents) {
     const out = cards.map(() => false),
       opened = cards.map(() => ({})),

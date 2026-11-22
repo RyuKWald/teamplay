@@ -22,9 +22,9 @@ export function mount(ctx) {
   let stopTimer = () => {}, countId, sensor, deck, running = false, preparing = false;
   let end = 0, guessed = 0, passed = 0, display;
   ctx.onClean(() => { running = false; stopTimer(); clearTimeout(countId); });
-  ctx.show(panel(el('h2',{},'Кто я?'),text('Держите телефон у лба экраном к компании.','help'),
-    seconds.node,control.node,reverse.node,sensitivity.node,directions,presentation(ctx)),cats.node,
-    button('Подготовиться',() => {
+  ctx.setup('Приложите телефон ко лбу экраном к друзьям. Они дают подсказки, а вы стараетесь угадать как можно больше слов.',
+    [['Управление',control.node,reverse.node,sensitivity.node,directions],['Раунд',seconds.node,presentation(ctx)],['Колоды',cats.node]],
+    ctx.launch('Подготовиться',() => {
       if (preparing) return;
       deck = pool(data,cats.value);
       if (!deck.length) { ctx.toast('Выберите категорию'); return; }
