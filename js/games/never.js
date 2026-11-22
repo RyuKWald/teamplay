@@ -8,7 +8,7 @@ export function mount(ctx) {
     cats = categories(data, s.categories);
   let count = 0,
     deck;
-  ctx.show(panel(el('h2', {}, 'Я никогда не'), text('Те, с кем это случалось, поднимают руку или загибают палец. Алкоголь не нужен; можно не отвечать на любую карточку.', 'help')), cats.node, button('Начать', () => {
+  ctx.setup('Читайте карточки по очереди. Те, с кем это случалось, поднимают руку или загибают палец. Любую карточку можно пропустить.', [['Колоды', cats.node]], ctx.launch('Начать', () => {
     deck = pool(data, cats.value);
     if (!deck.length) {
       ctx.toast('Выберите хотя бы одну колоду');

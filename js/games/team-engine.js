@@ -33,10 +33,10 @@ export function teamGame(ctx, {
     round = 0,
     locked = false;
   ctx.onClean(() => stop());
-  const form = panel(text(alias ? 'Объясняйте словами, не называя однокоренные слова. Свайп вправо — угадано, влево — пропуск.' : 'Показывайте без слов и звуков. Угадали — одно очко. За пропуск штрафа нет.', 'help'), !alias && solo.node, seconds.node, target.node, alias && penalty.node, alias && last.node);
+  const intro = alias ? 'Объясняйте слова команде, не называя однокоренные. Свайп вправо засчитывает ответ, влево пропускает слово.' : 'Показывайте слова без звуков. За верный ответ команда получает очко, за пропуск штрафа нет.';
   solo.input.onchange = () => teams.node.hidden = solo.value;
   teams.node.hidden = !alias && solo.value;
-  ctx.show(form, teams.node, cats.node, button('Начать матч', () => {
+  ctx.setup(intro, [['Команды', !alias && solo.node, teams.node], ['Правила раунда', seconds.node,target.node,alias && penalty.node,alias && last.node,ctx.presentation()], ['Колоды',cats.node]], ctx.launch('Начать матч', () => {
     deck = pool(data, cats.value);
     if (!deck.length) {
       toast('Выберите хотя бы одну категорию');

@@ -104,7 +104,8 @@ export function mount(ctx) {
   theme.input.onchange = story;
   story();
   apply();
-  ctx.show(panel(el('h2', {}, 'Мафия'), text('Нужен отдельный ведущий, не входящий в число игроков. Готовые составы меняют набор ролей, атмосфера — вступление. Ночные действия и победителя определяет ведущий.', 'help'), count.node, preset.node, mafia.node, ...Object.values(opts).map(sw => sw.node), info, theme.node, intro, day.node, vote.node, button('Раздать роли', () => {
+  ctx.setup('Ночью мафия действует тайно, днём город ищет виновных. Нужен отдельный ведущий: он проводит ночные действия и объявляет победителя.',
+    [['Состав партии',count.node,preset.node],['Роли',mafia.node,...Object.values(opts).map(sw => sw.node),info,()=>!status() && 'Исправьте состав ролей'],['Обсуждение',theme.node,intro,day.node,vote.node]], ctx.launch('Раздать роли', () => {
     if (!status()) {
       ctx.toast('Исправьте состав ролей');
       return;
@@ -129,7 +130,7 @@ export function mount(ctx) {
       name: `Игрок ${i + 1}`,
       content: () => el('div', {}, card(roles[r], 'prompt'), text(descriptions[r], 'help'))
     })), () => host(deck, theme.value));
-  })));
+  }));
   function host(assigned, themeId) {
     const dead = assigned.map(() => false),
       clock = el('div', {

@@ -136,6 +136,49 @@ main {
 .tile small {
   display:block;
   font-size:13px}
+.launch-shell {
+  max-width:740px;width:100%;margin:0 auto;display:grid;gap:16px}
+.launch-heading {padding:10px 2px 4px}
+.launch-heading>small,.step-head>small {
+  display:block;font-size:11px;font-weight:750;letter-spacing:.12em;color:var(--muted)}
+.launch-heading h2,.step-head h2 {
+  font-size:clamp(28px,5vw,38px);line-height:1.12;margin:10px 0}
+.launch-heading p,.intro-rules p {margin:0;color:var(--muted)}
+.format-grid,.game-list {display:grid;gap:10px}
+.format-row,.game-list .game-row {
+  min-width:0;min-height:0;display:grid;grid-template-columns:44px minmax(0,1fr) auto;
+  gap:14px;align-items:center;text-align:left;padding:16px;border-radius:19px;
+  background:var(--glass);border:1px solid color-mix(in srgb,var(--ink) 12%,transparent);
+  box-shadow:none}
+.format-row strong,.format-row small {display:block}
+.format-row strong,.game-list .tile strong {font-size:17px;line-height:1.2;margin:0 0 4px}
+.format-row small,.game-list .tile small {font-size:13px;font-weight:450}
+.format-icon,.game-list .tile .icon,.intro-icon {
+  display:grid;place-items:center;background:var(--field);border-radius:13px;width:44px;height:44px;
+  font-size:23px;line-height:1;margin:0;color:var(--ink)}
+.game-list .tile .icon {background:color-mix(in srgb,var(--tile) 18%,var(--field))}
+.game-list .tile:before {display:none}
+.chevron {color:var(--muted);font-size:22px;font-weight:400}
+.game-list .tile .group-size,.launch-heading>.group-size {
+  display:inline-block;border:0;padding:0;margin-top:5px;font-weight:650;font-size:12px;color:var(--muted)}
+.all-games {justify-self:start}
+.setup-shell {max-width:540px;gap:12px}
+.setup-shell .intro-icon {margin:18px 0 8px;width:56px;height:56px;font-size:30px}
+.intro-rules,.step-fields {padding:18px;background:var(--glass);border-radius:20px}
+.intro-rules h3 {margin:0 0 6px;font-size:16px}
+.launch-shell h2[tabindex="-1"]:focus {outline:0}
+.quick-facts {display:flex;gap:6px;flex-wrap:wrap;list-style:none;margin:12px 0 0;padding:0}
+.quick-facts:empty {display:none}
+.quick-facts li {padding:4px 9px;background:var(--field);border-radius:9px;font-size:13px;font-weight:600}
+.launch-note {margin:0;text-align:center;font-size:13px;color:var(--muted)}
+.step-head {padding:10px 0}
+.step-progress {display:flex;gap:5px;margin-top:14px}
+.step-progress span {height:4px;flex:1;border-radius:3px;background:color-mix(in srgb,var(--ink) 14%,transparent)}
+.step-progress .done {background:var(--accent)}
+.step-fields>.panel {padding:0;background:none;box-shadow:none;backdrop-filter:none;border:0;margin:0}
+.step-fields fieldset legend {font-size:14px;color:var(--muted);padding:0}
+.step-fields .field,.step-fields .help {margin:0}
+@media(min-width:700px){.format-grid,.game-list {grid-template-columns:repeat(2,minmax(0,1fr))}}
 .tile .group-size {
   display:inline-block;
   margin-top:10px;
@@ -481,4 +524,3 @@ to {
   text-shadow:none}
 .aurora {
   transition:background .7s ease}
-

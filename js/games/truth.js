@@ -27,7 +27,8 @@ export function mount(ctx) {
   const update = () => counter.textContent = `${data[mode.value].truth.length} вопросов · ${data[mode.value].dare.length} действий`;
   mode.input.addEventListener('change', update);
   update();
-  ctx.show(panel(el('h2', {}, 'Правда или действие'), text('Можно отказаться от любого вопроса или задания без объяснений. В режиме «Вдвоём» второй участник подключается только по желанию.', 'help'), names.node, mode.node, counter, order.node, choice.node, button('Начать', () => {
+  ctx.setup('Отвечайте на вопросы или выполняйте задания по очереди. Любой участник может отказаться без объяснений.',
+    [['Участники',names.node],['Правила',mode.node,counter,order.node,choice.node]],ctx.launch('Начать', () => {
     people = names.value;
     if (people.length < 2) {
       ctx.toast('Нужно минимум два игрока');
@@ -41,7 +42,7 @@ export function mount(ctx) {
     });
     ctx.setActive(true);
     nextPlayer();
-  })));
+  }));
   function nextPlayer() {
     if (order.value === 'turn') chosen = ++index % people.length;else {
       if (!bag.length) {
